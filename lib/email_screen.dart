@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'login_page.dart';
 import 'sign_in.dart';
 
-class FirstScreen extends StatelessWidget {
+class EmailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,35 +20,28 @@ class FirstScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
               Text(
-                'Login With Google',
+                'Login With Email',
                 style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                     color: Colors.black54),
               ),
               SizedBox(height: 40),
-              CircleAvatar(
-                backgroundImage: NetworkImage(
-                  imageUrl,
-                ),
-                radius: 60,
-                backgroundColor: Colors.transparent,
-              ),
-              SizedBox(height: 40),
-              Text(
-                'NAME',
-                style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black54),
-              ),
-              Text(
-                name,
-                style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.deepPurple,
-                    fontWeight: FontWeight.bold),
-              ),
+              // CircleAvatar(
+              //   backgroundImage: NetworkImage(
+              //     imageUrl,
+              //   ),
+              //   radius: 60,
+              //   backgroundColor: Colors.transparent,
+              // ),
+              // SizedBox(height: 40),,
+              //Text(
+              //  '$name',
+              //  style: TextStyle(
+              //      fontSize: 25,
+              //      color: Colors.deepPurple,
+              //      fontWeight: FontWeight.bold),
+              //),
               SizedBox(height: 20),
               Text(
                 'EMAIL',
@@ -58,7 +51,7 @@ class FirstScreen extends StatelessWidget {
                     color: Colors.black54),
               ),
               Text(
-                email,
+                '$email',
                 style: TextStyle(
                     fontSize: 25,
                     color: Colors.deepPurple,
@@ -68,7 +61,6 @@ class FirstScreen extends StatelessWidget {
               RaisedButton(
                 onPressed: () {
                   signOutGoogle();
-
                   Navigator.of(context).pushAndRemoveUntil(
                       MaterialPageRoute(builder: (context) {
                     return LoginPage();
